@@ -2,6 +2,7 @@
 \renewcommand\IEEEkeywordsname{Keywords}
 \usepackage{natbib}
 \usepackage{amsmath}
+\usepackage{graphicx}
 
 
 \usepackage{caption}
@@ -203,6 +204,13 @@ method including three steps as follows
 	
 \end{enumerate}
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.5\textwidth]{pics/proposedMethod.jpg}
+	\caption{Proposed Method}
+	\label{fig1}
+\end{figure}
+
 \section{Experimental Setup}
 The experimental study is carried out by used DeeBNet
 Matlab toolbox\cite{keyvanrad3}. Also we used the new FEPCD method to
@@ -212,7 +220,7 @@ unit, 500 hidden unit, 2000 hidden unit, and 10 as output. This
 architecture we used in each experiment.
 \subsection{Data}
 To evaluate the different DBN models on the the problem
-of classifying images of digits, we used MNIST dataset.
+of classifying images of digits, we used small MNIST and MNIST dataset.
 MNIST dataset includes images of handwritten digits\cite{lecun} (10
 classes of digits 0-9). Each digit was cared to be located in the
 center of each 28*28 image. The image pixels have discrete
@@ -233,12 +241,10 @@ normal sparse for sparse generative and sparse discriminative.
 In this step, we combine generative RBM, normal sparse
 generative RBM, discriminative RBM, and normal sparse
 generative RBM to find the best architecture to obtain best
-accuracy. Table \ref{preRes} shown the accuracy obtained. Fig 2. Feature
-sparsity for 2 nd Fig 3. Feature sparsity for 4 th experiment. Fig
-4. Show reconstruct for 1st experiment. Fig 5. Reconstruct for
-4 th experiment.
+accuracy. Table \ref{preRes} shown the accuracy obtained. Fig \ref{fig2} sparsity feature for 2$^{nd}$ Fig \ref{fig3} sparsity feature for 4$^{th}$ experiment. Fig \ref{fig4} Shown reconstruction for 1$^{st}$ experiment. Fig \ref{fig5} reconstruction for
+4$^{th}$ experiment.
 
-\begin{table}[ht]
+\begin{table}[h]
 		\caption{Accuracy Obtained In Preliminary Result}
 	\centering
 
@@ -255,7 +261,40 @@ sparsity for 2 nd Fig 3. Feature sparsity for 4 th experiment. Fig
 	\end{tabular}
 \end{table}
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.5\textwidth]{pics/fig2.jpg}
+	\caption{Sparsity feature 2$^{nd}$ experiment}
+	\label{fig2}
+\end{figure}
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.5\textwidth]{pics/fig3.jpg}
+	\caption{Sparsity feature 4$^{th}$ experiment}
+	\label{fig3}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.5\textwidth]{pics/fig4.jpg}
+	\caption{RBM hidden layer in 1$^{st}$ experiment}
+	\label{fig4}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.5\textwidth]{pics/fig5.jpg}
+	\caption{RBM hidden layer in 4$^{th}$ experiment}
+	\label{fig5}
+\end{figure}
+
+From  table \ref{preRes}, we obtained 99.96.2% as the best accuracy
+with 124 epoch. Accuracy obtained using input-generative-
+generative-Sparse Discriminative. Based on fig \ref{fig2} and fig \ref{fig3},
+sparse feature can obtained by using sparse distributive RBM.
+Fig \ref{fig4} and fig \ref{fig5} shown that from reconstruct, generative RBM
+make feature more general than sparse generative RBM.
 
 \subsection{Intermediate Result}
 Based on preliminary result, we know that the best result is
@@ -264,23 +303,56 @@ using input-generative-generative-Sparse Discriminative with
 we do experiment with another likelihood method, named
 FEPCD. In this experiment we implement FEPCD in our DBN
 structure and compare with CD. Experiment result shown in
-table II. Fig 6-9. shown that the confusion matrix for each
+table II. Fig \ref{fig6},\ref{fig7},\ref{fig8},\ref{fig9} shown that the confusion matrix for each
 experiment.
-\begin{table}[ht]
+\begin{table}[h]
 	\centering
 	\caption{Accuracy Obtained In Intermediate Result}
 	\label{interRes}
 	\begin{tabular}{|l|l|l|l|l|}
 		\hline
-		\multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Exp.\\ No\end{tabular}}} & \multicolumn{1}{c|}{\textbf{DBN Structure}}                                  & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Error\\ Before\\ BP\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Accuracy\\ (\%)\end{tabular}}} & \multicolumn{1}{c|}{\textbf{Epoch}} \\ \hline
+		\multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Exp.\\ No\end{tabular}}} & \multicolumn{1}{c|}{\textbf{DBN Structure}}                                  & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Error\\ Before\\ BP\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Acc\\ (\%)\end{tabular}}} & \multicolumn{1}{c|}{\textbf{Epoch}} \\ \hline
 		1                                                                                & Input- G(CD)-G(CD)-SD(CD)                                                    & 0.0850                                                                                    & 99.8                                                                                  & 154                                 \\ \hline
 		2                                                                                & \begin{tabular}[c]{@{}l@{}}Input-G(FEPCD)-G(FEPCD)\\ -SD(FEPCD)\end{tabular} & 0.1000                                                                                    & 99.9                                                                                  & 200                                 \\ \hline
 		3                                                                                & Input- G(CD)-G(CD)-SD(FEPCD)                                                 & 0.0890                                                                                    & 99.8                                                                                  & 116                                 \\ \hline
 		4                                                                                & \begin{tabular}[c]{@{}l@{}}Input- G(FEPCD)-G(FEPCD)\\ -SD(CD)\end{tabular}   & 0.1090                                                                                    & 99.8                                                                                  & 125                                 \\ \hline
 	\end{tabular}
 \end{table}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.5\textwidth]{pics/fig6.jpg}
+	\caption{1$^{st}$ intermediate experiment confusion matrix}
+	\label{fig6}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.5\textwidth]{pics/fig7.jpg}
+	\caption{2$^{nd}$ intermediate experiment confusion matrix}
+	\label{fig7}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.5\textwidth]{pics/fig8.jpg}
+	\caption{3$^{rd}$ intermediate experiment confusion matrix}
+	\label{fig8}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.5\textwidth]{pics/fig9.jpg}
+	\caption{4$^{th}$ intermediate experiment confusion matrix}
+	\label{fig9}
+\end{figure}
+
+From the all experiments, we got conclusion that best
+accuracy obtained is 99.8% with input- generative (FEPCD)-
+generative (FEPCD)-sparse generative (FEPCD) and 116
+epoch.
 \subsection{Final Result}
-From intermediate result we got conclusion that using
+From intermediate result we got conclusion that used
 FEPCD in all of RBM is better that CD, but its consuming
 time. For final result we did experiment for:
 \begin{itemize}
@@ -293,10 +365,10 @@ time. For final result we did experiment for:
 We choose Input - Generative(CD) - Generative(CD) -
 Sparse Generative (FEPCD) because based on intermediate
 result, this structure give good accuracy and smallest epoch.
-The result of experiment shown in table III. Confusion matrix
-for all experiment shown in fig 10 and fig 11. For final
+The experiment result shown in table \ref{finRes}. Confusion matrix
+for all experiment shown in fig \ref{fig10} and fig \ref{fig11}. For final
 experiment, we use full MNIST dataset.
-\begin{table}[ht]
+\begin{table}[h]
 	\centering
 	\caption{Accuracy Obtained In Final Result}
 	\label{finRes}
@@ -309,6 +381,22 @@ experiment, we use full MNIST dataset.
 		4                                                                                & \begin{tabular}[c]{@{}l@{}}Input- G(FEPCD)-G(FEPCD)\\ -SD(CD)\end{tabular}   & 0.1090                                                                                    & 99.8                                                                                  & 125                                 \\ \hline
 	\end{tabular}
 \end{table}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.5\textwidth]{pics/fig10.jpg}
+	\caption{1$^{st}$ final experiment confusion matrix}
+	\label{fig10}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=.5\textwidth]{pics/fig11.jpg}
+	\caption{2$^{nd}$ final experiment confusion matrix}
+	\label{fig11}
+\end{figure}
+
+
 \section{Conclusion}
 This paper investigates the best structure in combination
 normal sparse and discriminative deep belief network. Our
