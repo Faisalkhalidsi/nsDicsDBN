@@ -1,0 +1,340 @@
+\documentclass[conference]{IEEEtran}
+\renewcommand\IEEEkeywordsname{Keywords}
+\usepackage{natbib}
+\usepackage{amsmath}
+
+
+\usepackage{caption}
+\captionsetup{labelsep=space,justification=justified,singlelinecheck=off}
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+
+\title{Combination Normal Sparse and Discriminative Deep Belief Networks}
+
+\author{\IEEEauthorblockN{Faisal Khalid}
+\IEEEauthorblockA{Department of Computer Science\\
+University of Indonesia\\
+Depok, West Java, Indonesia\\
+faisal.khalid.si@gmail.com}
+\and
+
+\IEEEauthorblockN{Mohamad Ivan Fanany}
+\IEEEauthorblockA{Department of Computer Science\\
+University of Indonesia\\
+Depok, West Java, Indonesia\\
+ivan@cs.ui.ac.id}}
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+Problem in deep models is time consuming and may
+be trapped into local minima. One useful tool for dealing with his
+problem to use DBN (Deep Belief Network). Sparse
+representations are more efficient than non-sparse. This paper
+aim to find the best structure of combination sparsity and
+discriminative DBN. We use DBN architecture with 784 as input,
+500 hidden unit, 500 hidden unit, 2000 hidden unit, and 10 as
+output. We took 3 step in this experiment, preliminary,
+intermediate and final result. Every analysis of each step be a
+background to the next step. We use normal sparse for sparse
+generative and sparse discriminative. Experimental studies on
+MNIST dataset show that the best structure on combination
+normal sparse and discriminative deep belief networks is with
+input- generative (Contrastive Divergence) - generative
+(Contractive Divergence) – normal sparse
+discriminative
+(Contractive Divergence).
+\end{abstract}
+
+\begin{IEEEkeywords}
+Deep Belief Network, Normal Sparse Discriminative Deep Belief Network
+\end{IEEEkeywords}
+% no keywords
+
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+Artificial neural network have been used in pattern
+recognition, voice recognition and natural language
+processing. For some theoretical reason deep architecture were
+suggested \cite{keyvanrad1}.
+Problem in deep models is time consuming and may be
+trapped into local minima. To solve that problem, we can use
+DBN (Deep Belief Network). DBN can create a neural
+networks which have several hidden layers \cite{liu1}.
+Computing connection between hidden layer and visible
+layer in DBN is so difficult. Gibbs sampling can be used,
+although it takes a long time. So it is impossible to
+do.Contrastive Divergence (CD)\cite{carreiraperpinan1}, PCD \cite{tieleman1}, and FEPCD \cite{keyvanrad2}
+are used to solved that problem.
+In recent years there has been an increasing interest in
+automatic feature extraction. Many models were then
+developed for such as deep learning with interest in sparse
+coding\cite{olshausen1}  methods.
+Sparsity has recently become a concept of great interest
+and has become a key ingredient in Deep Belief Network.
+Bengio has argued that sparse representations are more
+efficient than non-sparse in fixed size representations \cite{bengio1}.
+Several previous studies have done in sparse and
+discriminative deep belief network. The studies in\cite{tieleman1}
+proposed semi-supervise learning by using discriminative
+Deep Belief Network(DDBN). \cite{walid1} proposed a sparse deep
+belief networks and denoising autoencoder to a new dataset
+proposed in the ICDAR 2013 handwritten digit
+competition.\cite{larochelle1} using discriminative RBM as classifiers can
+improve performance in a semi-supervised learning. The
+studies in\cite{halkias1} present a theoretical approach for sparse
+constraints in the DBN using the mixed norm for both-
+overlapping and overlapping groups.
+We argue that combination sparsity and discriminative
+DBN will increase the accuracy, but no one ever proposed
+what structure of that combination will give the best accuracy.
+This paper aim to find the best structure of combination
+sparsity and discriminative DBN. For ease of reproduction of
+results, this paper are performed on publicly available dataset
+(MNIST Dataset). This paper organized as follows. Section II
+explain literature study. Section III describes proposed
+methods. Section IV describe the experimental setup. Section
+V explain the experimental result and discussions. Finally
+conclusions are given in section VI.
+
+\section{Literature Review}
+\subsection{Normal Sparse RBM}
+Essentially
+RBMs
+learn
+non-sparse
+distributed
+representations. In all proposed methods, learning algorithm in
+RBM has been changed to enforce RBM to learn sparse
+representation. The goal of sparsity in RBM is that most of
+hidden units have zero values and this equivalent to force
+activation probability of hidden units to zero. Normal sparse
+regulation term has a variance parameter that can control the
+force degree of sparseness. The regulation term used normal
+function properties\cite{keyvanrad1}.
+In another paper based on rate distortion theory, the
+penalty factor is activation probability in hidden unit\cite{ji1}.
+Algorithm sparse RBM learning algorithm\cite{lee1}
+\begin{enumerate}
+	\item Update the parameters using approximation to the
+	gradient of log likelihood like CD, PCD or FEPCD.
+	\item Update the parameter using gradient of the regulation
+	term.
+	\item Repeat steps 1 and 2 until convergence on reach to
+	max epoch.
+\end{enumerate}
+In \cite{keyvanrad1} proposed a new regulation term that has different
+behavior according to deviation of the activation of the hidden
+units from a (low) fixed level p. They used normal probability
+density function as regulation term.
+\begin{equation}\label{eq:1}
+L_{sparsity}=\sum_{j=1}^{n}f(q_{j},p,\sigma^{2})
+\end{equation}
+According to \ref{eq:1} the gradient if regularization
+term must be used in step 2. The gradient of regularization
+term can be computed as follows :
+\begin{multline}
+\frac{\partial}{\partial b_{j}}L_{sparsity }\oe  \frac{1}{m}\left ( p-\frac{1}{m}\sum_{l=1}^{m}q_{j}^{(l)} \right )f\left ( q_{j},p,\sigma^{2}   \right )\\ \times\sum_{l=1}^{m}q_{j}^{(l)}\left ( 1-q_{j}^{(l)} \right )
+\end{multline}
+
+\subsection{Discriminative Restricted Boltzmann Machines (DRBM)}
+The important thing in classification is have a good and
+correct classification. we can optimize directly 
+$ p\left ( x|y \right )$  below\cite{larochelle1}
+\begin{equation}
+L_{disc}\left ( D_{train} \right )= -\sum_{i=1}^{\left | D_{train} \right |}log    p\left ( y_{i}|x_{i} \right )
+\end{equation}
+Based on $L_{disc}$, discriminative RBM (DRBM) can refer to
+RBMs trained. Contrastive divergence can be used in DRBM
+to training\cite{taylor1}. Gradient can be compute as:
+\begin{multline}
+\frac{\partial log p\left ( y_{i}|x_{i} \right )}{\partial\theta } =\sum_{j}sigm\left ( o_{yj}\left ( x_{i} \right ) \right )\frac{\partial o_{yj}\left ( x_{i} \right )}{\partial\theta}
+\\ -\sum_{i,y^{*}}sigm\left ( o_{y^{*}}\left ( x_{i} \right ) \right )p\left ( y^{*}|x_{i} \right )\frac{\partial o_{yj}\left ( x_{i} \right )}{\partial\theta}
+\end{multline}
+
+Where $o_{yj}\left ( x \right )=c_{j}+\sum_{k}W_{jkxk} + U_{jy}$. Stochastic gradient descent
+optimization can be done by computed this gradient with
+efficient. Fine-tuning the top RBM of DBN is using this
+approach\cite{hinton1}.
+\subsection{Free Energy in Persistent Contrastive Divergence}
+Gibbs sampling is an appropriate method as in RBM
+because each unit in RBM is independent from other units.
+CD, PCD, or FEPCD\cite{keyvanrad2} can be used to obtain proper
+samples from the model because impossible to use Gibbs
+sampling.
+In PCD methods, many persistent chain can be run in
+parallel. If we can define the criteria for good chain, and for
+computing the gradient sample would be more accurate.
+Defining the best chain by using the free energy is as
+follows \cite{hinton2} :
+\begin{multline}
+F\left ( v \right )=-\sum_{i}v_{i}a_{i}-\sum_{j}q_{j}I_{j}+
+\\ \sum_{j}\left ( q_{j}log q_{j}+\left ( 1-q_{j} \right )log\left ( 1-q_{j} \right ) \right )
+\end{multline}
+
+Sum of input to hidden unit $j$ is equal with $I_{j}=b_{j}+\sum v_{i}w_{ij}$
+and $q_{j}=q(I_{j})$ is equal to activation probability of hidden unit
+$h_{j}$ given $v$ and $q$ is logistic function. An equivalent and
+simpler equation for computing $F(v)$ is as follows:
+\begin{equation}
+F(v)=-\sum_{i}v_{i}a_{i}-\sum_{j}log(1+e^{I_{j}})
+\end{equation}
+\section{Proposed Method}
+Fig. 1. Show proposed method in this paper. The proposed
+method including three steps as follows
+\begin{enumerate}
+	\item Train the first RBM by inputting the original data and
+	fixing up the parameters of this RBM. Then we use
+	these output as the input of the second RBM and the
+	rest can be done in the same manner.
+	\item We use modified the RBM with normal sparse.
+	\item Fine-tuning: using Back Propagation (BP). We use
+	gradient-descent algorithm to revise the weight
+	matrix of the whole network.
+	
+\end{enumerate}
+
+\section{Experimental Setup}
+The experimental study is carried out by used DeeBNet
+Matlab toolbox\cite{keyvanrad3}. Also we used the new FEPCD method to
+approximate the gradient of the log likelihood.
+We use DBN architecture with 784 as input, 500 hidden
+unit, 500 hidden unit, 2000 hidden unit, and 10 as output. This
+architecture we used in each experiment.
+\subsection{Data}
+To evaluate the different DBN models on the the problem
+of classifying images of digits, we used MNIST dataset.
+MNIST dataset includes images of handwritten digits\cite{lecun} (10
+classes of digits 0-9). Each digit was cared to be located in the
+center of each 28*28 image. The image pixels have discrete
+values between 0 and 255 hat most of them have the values at
+the edge of this interval. The dataset was divided to train and
+test part including 60,000 and 10,000 images respectively. Inour experiment, these discrete values have been mapped to
+interval [0-1] using min-max normalization method. For
+preliminary and intermediate we use small MNIST. Small
+MNIST is part of MNIST dataset but only 6000 training data
+and 1000 testing data.
+\section{Experiment Result And Analysis}
+In this section we describe the performance of DBN by
+comparing with other modified DBN. We took 3 step in this
+experiment, preliminary, intermediate and final result. Every
+analysis of each step be a background to the next step. We use
+normal sparse for sparse generative and sparse discriminative.
+\subsection{Preliminary Result}
+In this step, we combine generative RBM, normal sparse
+generative RBM, discriminative RBM, and normal sparse
+generative RBM to find the best architecture to obtain best
+accuracy. Table \ref{preRes} shown the accuracy obtained. Fig 2. Feature
+sparsity for 2 nd Fig 3. Feature sparsity for 4 th experiment. Fig
+4. Show reconstruct for 1st experiment. Fig 5. Reconstruct for
+4 th experiment.
+
+\begin{table}[ht]
+		\caption{Accuracy Obtained In Preliminary Result}
+	\centering
+
+	\label{preRes}
+	\begin{tabular}{|l|l|c|c|c|c|}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Exp.\\ No\end{tabular}}} & \multicolumn{1}{c|}{\textbf{DBN Structure}} & \textbf{\begin{tabular}[c]{@{}c@{}}Error\\ Before\\ BP\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Error\\ After\\ BP\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Accuracy\\ (\%)\end{tabular}} & \textbf{Epoch} \\ \hline
+		1                                                                                & Input- SG-SG-SD                             & 0.568                                                                & 0.055                                                               & 99.945                                                           & 200            \\ \hline
+		2                                                                                & Input-G-G-D                                 & 0.063                                                                & 0.044                                                               & 99.956                                                           & 175            \\ \hline
+		3                                                                                & Input-SG-SG-D                               & 0.063                                                                & 0.095                                                               & 99.905                                                           & 200            \\ \hline
+		4                                                                                & Input-G-G-SD                                & 0.067                                                                & 0.038                                                               & 99.962                                                           & 124            \\ \hline
+		5                                                                                & Input-SG-G-SD                               & 0.31                                                                 & 0.045                                                               & 99.955                                                           & 200            \\ \hline
+		6                                                                                & Input-G-SG-D                                & 0.115                                                                & 0.048                                                               & 99.952                                                           & 200            \\ \hline
+	\end{tabular}
+\end{table}
+
+
+
+\subsection{Intermediate Result}
+Based on preliminary result, we know that the best result is
+using input-generative-generative-Sparse Discriminative with
+99.962% accuracy and 124 epoch. In intermediate experiment,
+we do experiment with another likelihood method, named
+FEPCD. In this experiment we implement FEPCD in our DBN
+structure and compare with CD. Experiment result shown in
+table II. Fig 6-9. shown that the confusion matrix for each
+experiment.
+\begin{table}[ht]
+	\centering
+	\caption{Accuracy Obtained In Intermediate Result}
+	\label{interRes}
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Exp.\\ No\end{tabular}}} & \multicolumn{1}{c|}{\textbf{DBN Structure}}                                  & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Error\\ Before\\ BP\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Accuracy\\ (\%)\end{tabular}}} & \multicolumn{1}{c|}{\textbf{Epoch}} \\ \hline
+		1                                                                                & Input- G(CD)-G(CD)-SD(CD)                                                    & 0.0850                                                                                    & 99.8                                                                                  & 154                                 \\ \hline
+		2                                                                                & \begin{tabular}[c]{@{}l@{}}Input-G(FEPCD)-G(FEPCD)\\ -SD(FEPCD)\end{tabular} & 0.1000                                                                                    & 99.9                                                                                  & 200                                 \\ \hline
+		3                                                                                & Input- G(CD)-G(CD)-SD(FEPCD)                                                 & 0.0890                                                                                    & 99.8                                                                                  & 116                                 \\ \hline
+		4                                                                                & \begin{tabular}[c]{@{}l@{}}Input- G(FEPCD)-G(FEPCD)\\ -SD(CD)\end{tabular}   & 0.1090                                                                                    & 99.8                                                                                  & 125                                 \\ \hline
+	\end{tabular}
+\end{table}
+\subsection{Final Result}
+From intermediate result we got conclusion that using
+FEPCD in all of RBM is better that CD, but its consuming
+time. For final result we did experiment for:
+\begin{itemize}
+	\item Input- Generative(CD) - Generative(CD) - Sparse
+	Generative(CD)
+	\item Input-Generative(CD)-Generative(CD)-Sparse
+	Generative(FEPCD)
+\end{itemize}
+
+We choose Input - Generative(CD) - Generative(CD) -
+Sparse Generative (FEPCD) because based on intermediate
+result, this structure give good accuracy and smallest epoch.
+The result of experiment shown in table III. Confusion matrix
+for all experiment shown in fig 10 and fig 11. For final
+experiment, we use full MNIST dataset.
+\begin{table}[ht]
+	\centering
+	\caption{Accuracy Obtained In Final Result}
+	\label{finRes}
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		\multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Exp.\\ No\end{tabular}}} & \multicolumn{1}{c|}{\textbf{DBN Structure}}                                  & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Error\\ Before\\ BP\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Accuracy\\ (\%)\end{tabular}}} & \multicolumn{1}{c|}{\textbf{Epoch}} \\ \hline
+		1                                                                                & Input- G(CD)-G(CD)-SD(CD)                                                    & 0.0850                                                                                    & 99.8                                                                                  & 154                                 \\ \hline
+		2                                                                                & \begin{tabular}[c]{@{}l@{}}Input-G(FEPCD)-G(FEPCD)\\ -SD(FEPCD)\end{tabular} & 0.1000                                                                                    & 99.9                                                                                  & 200                                 \\ \hline
+		3                                                                                & Input- G(CD)-G(CD)-SD(FEPCD)                                                 & 0.0890                                                                                    & 99.8                                                                                  & 116                                 \\ \hline
+		4                                                                                & \begin{tabular}[c]{@{}l@{}}Input- G(FEPCD)-G(FEPCD)\\ -SD(CD)\end{tabular}   & 0.1090                                                                                    & 99.8                                                                                  & 125                                 \\ \hline
+	\end{tabular}
+\end{table}
+\section{Conclusion}
+This paper investigates the best structure in combination
+normal sparse and discriminative deep belief network. Our
+experimental result show that DBN with input- generative
+(Contrastive Divergence) - generative (Contractive
+Divergence) – normal sparse discriminative (Contractive
+Divergence) give the best accuracy. It is obtained 99.9862%.
+Sparse Discriminative make sparse feature. Sparse feature
+give better accuracy that non sparse feature.
+
+
+% use section* for acknowledgment
+\section*{Acknowledgment}
+
+
+The authors would like to thank...
+
+\bibliographystyle{unsrt}
+\bibliography{pustaka}
+
+
+
+
+
+
+% that's all folks
+\end{document}
+
+

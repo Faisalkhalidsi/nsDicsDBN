@@ -1,0 +1,107 @@
+\begin{thebibliography}{10}
+
+\bibitem{keyvanrad1}
+M.~A. Keyvanrad and M.~M. Homayounpour.
+\newblock Normal sparse deep belief network.
+\newblock In {\em 2015 International Joint Conference on Neural Networks
+  (IJCNN)}, pages 1--7, July 2015.
+
+\bibitem{liu1}
+Yan Liu, Shusen Zhou, and Qingcai Chen.
+\newblock Discriminative deep belief networks for visual data classification.
+\newblock {\em Pattern Recognition}, 44(10–11):2287 -- 2296, 2011.
+\newblock Semi-Supervised Learning for Visual Content Analysis and
+  Understanding.
+
+\bibitem{carreiraperpinan1}
+Miguel~A. Carreira-Perpinan and Geoffrey~E. Hinton.
+\newblock On contrastive divergence learning.
+\newblock 2005.
+
+\bibitem{tieleman1}
+Tijmen Tieleman.
+\newblock Training restricted boltzmann machines using approximations to the
+  likelihood gradient.
+\newblock In {\em Proceedings of the 25th International Conference on Machine
+  Learning}, ICML '08, pages 1064--1071, New York, NY, USA, 2008. ACM.
+
+\bibitem{keyvanrad2}
+Mohammad~Ali Keyvanrad and Mohammad~Mehdi Homayounpour.
+\newblock Deep belief network training improvement using elite samples
+  minimizing free energy.
+\newblock {\em CoRR}, abs/1411.4046, 2014.
+
+\bibitem{olshausen1}
+B.~Olshausen and D.~Field.
+\newblock Emergence of simple-cell receptive field properties by learning a
+  sparse code for natural images.
+\newblock {\em Nature}, 381:607--609, 1996.
+
+\bibitem{bengio1}
+Yoshua Bengio.
+\newblock Learning deep architectures for ai.
+\newblock {\em Found. Trends Mach. Learn.}, 2(1):1--127, January 2009.
+
+\bibitem{walid1}
+R.~Walid and A.~Lasfar.
+\newblock Handwritten digit recognition using sparse deep architectures.
+\newblock In {\em Intelligent Systems: Theories and Applications (SITA-14),
+  2014 9th International Conference on}, pages 1--6, May 2014.
+
+\bibitem{larochelle1}
+Hugo Larochelle and Yoshua Bengio.
+\newblock Classification using discriminative restricted boltzmann machines.
+\newblock In {\em Proceedings of the 25th International Conference on Machine
+  Learning}, ICML '08, pages 536--543, New York, NY, USA, 2008. ACM.
+
+\bibitem{halkias1}
+Xanadu Halkias, S{\'{e}}bastien Paris, and Herv{\'{e}} Glotin.
+\newblock Sparse penalty in deep belief networks: Using the mixed norm
+  constraint.
+\newblock {\em CoRR}, abs/1301.3533, 2013.
+
+\bibitem{ji1}
+Nan-Nan Ji, Jiang-She Zhang, and Chun-Xia Zhang.
+\newblock A sparse-response deep belief network based on rate distortion
+  theory.
+\newblock {\em Pattern Recognition}, 47(9):3179 -- 3191, 2014.
+
+\bibitem{lee1}
+Honglak Lee, Chaitanya Ekanadham, and Andrew~Y. Ng.
+\newblock Sparse deep belief net model for visual area v2.
+\newblock In {\em Proceedings of the 20th International Conference on Neural
+  Information Processing Systems}, NIPS'07, pages 873--880, USA, 2007. Curran
+  Associates Inc.
+
+\bibitem{taylor1}
+Graham~W. Taylor, Geoffrey~E. Hinton, and Sam Roweis.
+\newblock Modeling human motion using binary latent variables.
+\newblock In {\em Proceedings of the 19th International Conference on Neural
+  Information Processing Systems}, NIPS'06, pages 1345--1352, Cambridge, MA,
+  USA, 2006. MIT Press.
+
+\bibitem{hinton1}
+Geoffrey~E. Hinton.
+\newblock To recognize shapes, first learn to generate images.
+\newblock In Trevor~Drew Paul~Cisek and John~F. Kalaska, editors, {\em
+  Computational Neuroscience: Theoretical Insights into Brain Function}, volume
+  165 of {\em Progress in Brain Research}, pages 535 -- 547. Elsevier, 2007.
+
+\bibitem{hinton2}
+Geoffrey~E. Hinton.
+\newblock {\em A Practical Guide to Training Restricted Boltzmann Machines},
+  pages 599--619.
+\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2012.
+
+\bibitem{keyvanrad3}
+Mohammad~Ali Keyvanrad and Mohammad~Mehdi Homayounpour.
+\newblock A brief survey on deep belief networks and introducing a new object
+  oriented {MATLAB} toolbox (deebnet).
+\newblock {\em CoRR}, abs/1408.3264, 2014.
+
+\bibitem{lecun}
+Yann LeCun and Corinna Cortes.
+\newblock {MNIST} handwritten digit database.
+\newblock 2010.
+
+\end{thebibliography}
