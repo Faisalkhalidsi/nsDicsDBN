@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.5)  30 SEP 2016 06:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.8.5)  30 SEP 2016 18:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -255,18 +255,18 @@ Package caption Info: float package is loaded.
 ) (./nsDiscDBN.aux)
 \openout1 = `nsDiscDBN.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
-LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
+LaTeX Font Info:    ... okay on input line 16.
 
 -- Lines per column: 56 (exact).
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
@@ -332,37 +332,34 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-Missing character: There is no â in font ptmb7t!
-Missing character: There is no € in font ptmb7t!
-Missing character: There is no “ in font ptmb7t!
 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
 
-LaTeX Warning: Command \oe invalid in math mode on input line 148.
+LaTeX Warning: Command \oe invalid in math mode on input line 150.
 
 
-LaTeX Warning: Command \oe invalid in math mode on input line 148.
+LaTeX Warning: Command \oe invalid in math mode on input line 150.
 
 <pics/proposedMethod.jpg, id=17, 840.13875pt x 629.35126pt>
 File: pics/proposedMethod.jpg Graphic file (type jpg)
 
 <use pics/proposedMethod.jpg>
-Package pdftex.def Info: pics/proposedMethod.jpg used on input line 209.
+Package pdftex.def Info: pics/proposedMethod.jpg used on input line 211.
 (pdftex.def)             Requested size: 129.0pt x 96.62653pt.
  [2 <./pics/proposedMethod.jpg>]
 <pics/fig2.jpg, id=23, 924.45375pt x 557.08125pt>
 File: pics/fig2.jpg Graphic file (type jpg)
  <use pics/fig2.jpg>
-Package pdftex.def Info: pics/fig2.jpg used on input line 259.
+Package pdftex.def Info: pics/fig2.jpg used on input line 262.
 (pdftex.def)             Requested size: 129.0pt x 77.73582pt.
 
 <pics/fig3.jpg, id=24, 983.675pt x 573.14125pt>
 File: pics/fig3.jpg Graphic file (type jpg)
  <use pics/fig3.jpg>
-Package pdftex.def Info: pics/fig3.jpg used on input line 266.
+Package pdftex.def Info: pics/fig3.jpg used on input line 269.
 (pdftex.def)             Requested size: 129.0pt x 75.15813pt.
 
 
@@ -371,7 +368,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <pics/fig4.jpg, id=25, 698.61pt x 690.58pt>
 File: pics/fig4.jpg Graphic file (type jpg)
  <use pics/fig4.jpg>
-Package pdftex.def Info: pics/fig4.jpg used on input line 273.
+Package pdftex.def Info: pics/fig4.jpg used on input line 276.
 (pdftex.def)             Requested size: 129.0pt x 127.51294pt.
 
 
@@ -380,7 +377,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <pics/fig5.jpg, id=26, 697.60625pt x 692.5875pt>
 File: pics/fig5.jpg Graphic file (type jpg)
  <use pics/fig5.jpg>
-Package pdftex.def Info: pics/fig5.jpg used on input line 280.
+Package pdftex.def Info: pics/fig5.jpg used on input line 283.
 (pdftex.def)             Requested size: 129.0pt x 128.07384pt.
 
 
@@ -389,7 +386,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <pics/fig6.jpg, id=27, 645.41125pt x 642.4pt>
 File: pics/fig6.jpg Graphic file (type jpg)
  <use pics/fig6.jpg>
-Package pdftex.def Info: pics/fig6.jpg used on input line 317.
+Package pdftex.def Info: pics/fig6.jpg used on input line 321.
 (pdftex.def)             Requested size: 129.0pt x 128.3895pt.
 
 
@@ -398,35 +395,35 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <pics/fig7.jpg, id=28, 696.6025pt x 691.58376pt>
 File: pics/fig7.jpg Graphic file (type jpg)
  <use pics/fig7.jpg>
-Package pdftex.def Info: pics/fig7.jpg used on input line 324.
+Package pdftex.def Info: pics/fig7.jpg used on input line 328.
 (pdftex.def)             Requested size: 129.0pt x 128.06761pt.
 
 <pics/fig8.jpg, id=29, 658.46pt x 683.55376pt>
 File: pics/fig8.jpg Graphic file (type jpg)
  <use pics/fig8.jpg>
-Package pdftex.def Info: pics/fig8.jpg used on input line 331.
+Package pdftex.def Info: pics/fig8.jpg used on input line 335.
 (pdftex.def)             Requested size: 129.0pt x 133.91304pt.
  [3 <./pics/fig2.jpg> <./pics/fig3.jpg> <./pics/fig4.jpg> <./pics/fig7.jpg>]
 <pics/fig9.jpg, id=33, 656.4525pt x 679.53876pt>
 File: pics/fig9.jpg Graphic file (type jpg)
  <use pics/fig9.jpg>
-Package pdftex.def Info: pics/fig9.jpg used on input line 338.
+Package pdftex.def Info: pics/fig9.jpg used on input line 342.
 (pdftex.def)             Requested size: 129.0pt x 133.53085pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 352--354
+Underfull \hbox (badness 10000) in paragraph at lines 356--358
 []\OT1/ptm/m/n/10 Input-Generative(CD)-Generative(CD)-Sparse
  []
 
 <pics/fig10.jpg, id=34, 678.535pt x 699.61375pt>
 File: pics/fig10.jpg Graphic file (type jpg)
  <use pics/fig10.jpg>
-Package pdftex.def Info: pics/fig10.jpg used on input line 377.
+Package pdftex.def Info: pics/fig10.jpg used on input line 382.
 (pdftex.def)             Requested size: 129.0pt x 133.00272pt.
 
 <pics/fig11.jpg, id=35, 670.505pt x 693.59125pt>
 File: pics/fig11.jpg Graphic file (type jpg)
  <use pics/fig11.jpg>
-Package pdftex.def Info: pics/fig11.jpg used on input line 384.
+Package pdftex.def Info: pics/fig11.jpg used on input line 389.
 (pdftex.def)             Requested size: 129.0pt x 133.43471pt.
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
@@ -460,13 +457,13 @@ Before submitting the final camera ready copy, remember to:
 
 [5] (./nsDiscDBN.aux) ) 
 Here is how much of TeX's memory you used:
- 4492 strings out of 494953
- 70471 string characters out of 6180978
+ 4491 strings out of 494953
+ 70462 string characters out of 6180978
  146661 words of memory out of 5000000
- 7729 multiletter control sequences out of 15000+600000
+ 7728 multiletter control sequences out of 15000+600000
  36841 words of font info for 73 fonts, out of 8000000 for 9000
  17 hyphenation exceptions out of 8191
- 38i,14n,38p,416b,332s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,14n,38p,416b,358s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.e
 nc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/sha
@@ -480,7 +477,7 @@ msfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8
 a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on nsDiscDBN.pdf (5 pages, 1177369 bytes).
+Output written on nsDiscDBN.pdf (5 pages, 1177395 bytes).
 PDF statistics:
  84 PDF objects out of 1000 (max. 8388607)
  52 compressed objects within 1 object stream

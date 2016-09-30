@@ -4,6 +4,7 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{float}
+\renewcommand{\figurename}{Fig.}
 
 
 \usepackage{caption}
@@ -35,24 +36,25 @@ ivan@cs.ui.ac.id}}
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
 \begin{abstract}
-Sparse representations are better than non-sparse in efficiency. This paper
-aim to find the best structure of combination sparsity and
-discriminative DBN. We use DBN architecture with 784 as input,
-500 hidden unit, 500 hidden unit, 2000 hidden unit, and 10 as
-output. We took 3 step in this experiment, preliminary,
-intermediate and the final result. Every analysis of each step is a
-background to the next step. We use normal sparse for sparse
-generative and sparse discriminative. Experimental studies on
-MNIST dataset shows that the best structure in combination
-normal sparse and discriminative deep belief networks are with
-input- generative (Contrastive Divergence) - generative
-(Contractive Divergence) – normal sparse
-discriminative
-(Contractive Divergence).
+RBM are connected only visible
+throughout the entire unit with hidden units, but there is no
+connection between visible units or between hidden units. DBN is created by stacking RBMs, therefore the
+improvement in RBMs are due to the improvement of DBN. Sparse representations in RBM are better than non-sparse in efficiency. This paper aim to find the best structure of
+combination sparsity and discriminative DBN. We use DBN
+architecture with 784 as input, 500 hidden unit, 500 hidden
+unit, 2000 hidden unit, and 10 as output. We took 3 step in
+this experiment, preliminary, intermediate and the final result.
+Every analysis of each step is a background to the next step.
+We use normal sparse for sparse generative and sparse discrim-
+inative. Experimental studies on MNIST dataset shows that the
+best structure in combination normal sparse and discriminative
+deep belief networks are with input- generative (Contrastive
+Divergence) - generative (Contractive Divergence) normal sparse
+discriminative (Contractive Divergence).
 \end{abstract}
 
 \begin{IEEEkeywords}
-Restricted Boltzmann Machines, Normal Sparse , Discriminative Deep Belief Network, Deep Belief Networks
+Restricted Boltzmann Machines, Sparsity, Normal Sparse , Discriminative Deep Belief Network, Deep Belief Networks
 \end{IEEEkeywords}
 % no keywords
 
@@ -79,7 +81,7 @@ belief networks and denoising autoencoder to a new dataset has been proposed \ci
 improve performance in a semi-supervised learning. The
 studies in\cite{halkias1} present a theoretical approach for sparse
 constraints in the DBN.
-DB=BN is created by stacking RBMs, therefore the improvement in RBMs are due to the improvement of DBN. We argue that combination sparsity and discriminative
+DBN is created by stacking RBMs, therefore the improvement in RBMs are due to the improvement of DBN. We argue that combination sparsity and discriminative
 DBN will increase the accuracy, but no one ever proposed
 what structure of that combination will give the best accuracy .
 This paper aim to find the best structure of combination
@@ -234,6 +236,7 @@ accuracy. Table \ref{preRes} shown the accuracy obtained. Fig \ref{fig2} sparsit
 4$^{th}$ experiment.
 
 \begin{table}[h]
+	 \captionsetup{justification=centering}
 		\caption{Accuracy Obtained In Preliminary Result}
 	\centering
 
@@ -257,7 +260,7 @@ SG  : Normal Sparse Generative RBM
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=.25\textwidth]{pics/fig2.jpg}
-	\caption{Sparsity feature 2$^{nd}$ experiment}
+	\caption{.Sparsity feature 2$^{nd}$ experiment}
 	\label{fig2}
 \end{figure}
 
@@ -300,6 +303,7 @@ table II. Fig \ref{fig6},\ref{fig7},\ref{fig8},\ref{fig9} shown that the confusi
 experiment.
 \begin{table}[h]
 	\centering
+	 \captionsetup{justification=centering}
 	\caption{Accuracy Obtained In Intermediate Result}
 	\label{interRes}
 	\begin{tabular}{|l|l|l|l|l|}
@@ -358,8 +362,9 @@ Sparse Generative (FEPCD) because based on the intermediate result, this structu
 The experiment results shown in table \ref{finRes}. Confusion matrix
 for all experiment shown in fig \ref{fig10} and fig \ref{fig11}. For final
 experiment, we use full MNIST dataset.
-\begin{table}[H]
+\begin{table}[h]
 	\centering
+	 \captionsetup{justification=centering}
 	\caption{Accuracy Obtained In Final Result}
 	\label{finRes}
 	\begin{tabular}{|l|l|l|l|l|}
@@ -399,10 +404,10 @@ give better accuracy that nonsparse feature.
 
 
 % use section* for acknowledgment
-\section*{Acknowledgment}
+%\section*{Acknowledgment}
 
 
-The authors would like to thank...
+%The authors would like to thank...
 
 \bibliographystyle{unsrt}
 \bibliography{pustaka}
